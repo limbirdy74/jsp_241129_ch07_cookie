@@ -24,6 +24,10 @@
 			Cookie cookie1 = new Cookie("cookieId", mid); // 쿠키1 생성. 인수를 넣어주어야만 하는 생성자. 안넣으면 오류남
 			Cookie cookie2 = new Cookie("log_in", "yes"); 
 			// 만들기만 한것. 밑에 보내기
+			
+			// 쿠키 유효 시간 설정
+			cookie1.setMaxAge(60*60*24); // 초단위. 24시간 동안 유효한 지속쿠키로 전환. -1 일 경우 session 쿠키가 됨
+			
 			response.addCookie(cookie1); // 생성된 쿠키를 클라이언트 웹브라우저로 보내기
 			response.addCookie(cookie2);
 			
